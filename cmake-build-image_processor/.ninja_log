@@ -1,0 +1,19 @@
+# ninja log v5
+152	10010	6767438661692809	CMakeFiles/image_processor__test.dir/test/main_gtest.cpp.obj	e2dc1d08c3569558
+58	3503	6767438910250801	googletest-master/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	576bfcc9c6828e6
+1	56	0	clean	f6b1994cc81dfbb3
+157	17809	6767438740405296	CMakeFiles/image_processor__test.dir/test/test_improc.cpp.obj	20fcc235f9f771a5
+19	10235	6767438664678252	CMakeFiles/image_processor__test.dir/src/improc.cpp.obj	cde0f0d4b4b7de5c
+134	9203	6767438653945870	CMakeFiles/image_processor__main.dir/src/bitmap.cpp.obj	d489a211f5e8099a
+35	7591	6767438951146567	CMakeFiles/image_processor__test.dir/test/own/test_Image.cpp.obj	b5724c4e35a420ff
+143	8540	6767438645915271	CMakeFiles/image_processor__test.dir/src/bitmap.cpp.obj	ee13347858ed909d
+138	10102	6767438663148119	CMakeFiles/image_processor__main.dir/src/improc.cpp.obj	425dac3057c89f19
+168	17646	6767438739075208	CMakeFiles/image_processor__test.dir/test/test_aux.cpp.obj	68e4f31ebf464b8b
+147	17829	6767438740995384	CMakeFiles/image_processor__test.dir/test/test_io.cpp.obj	775b6bd44e0403a7
+163	18181	6767438744475607	CMakeFiles/image_processor__test.dir/test/own/test_matrix.cpp.obj	39843c58319e73a4
+41	6563	6767438940781422	googletest-master/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj	e93768a217102be2
+52	14385	6767439018823554	googletest-master/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	c7fd57480d842d96
+19481	23348	6767435099876132	lib/libgtest.a	7b763998cad333e5
+23348	23981	6767435106211739	lib/libgmock.a	d7cf3a403ccd416d
+23981	28727	6767435153579484	image_processor__test.exe	8f9c8208dfbe701e
+46	4246	6767438917681386	googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj	6a1775a9d1c08908

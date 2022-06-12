@@ -1,0 +1,7 @@
+"D:\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=D:/CLion 2021.3.3/bin/ninja/win/ninja.exe" -G Ninja "D:\Computer_Science_AGH\AGH 2nd semester\progII\image_processor"
+-- Configuring done
+CMake Error: Error required internal CMake variable not set, cmake may not be built correctly.
+Missing variable is:
+CMAKE_C_COMPILE_OBJECT
+-- Generating done
+CMake Generate step failed.  Build files cannot be regenerated correctly.
