@@ -205,27 +205,30 @@ Image transform(const Image& im_in, std::function<byte(byte)> func){
 }
 
 Mask get_averaging_mask(std::size_t n){
-    return Mask(n, n, (int) (1 / (n * n)));
+    return Mask(n, n, (double) (1.0 / ((double)n * (double)n)));
 }
 
 Image filter(const Image& im_in, const Mask& mask){
     Image processed(im_in);
-    std::size_t mask_range = (mask.get_ncols() - 1) / 2;
-    for(std::size_t r = 0; r < processed.get_nrows(); r++){
-        for(std::size_t c = 0; c < processed.get_ncols(); c++){
-                byte sum = 0;//FIXME
-                std::size_t mr = 0;
-                std::size_t mc = 0;
-                for(std::size_t r_m = r; r_m <= r + mask.get_nrows(); r_m++){
-                    for(std::size_t c_m = c; c_m <= c + mask.get_ncols(); c_m++){
-                        std::size_t pixel_value;
-                        if(r_m < mask_range || r_m - mask_range <= im_in.get_nrows() || c_m < mask_range || c_m - mask_range <= im_in.get_ncols()) {
+    std::size_t mask_range = (mask.get_ncols() - 1) / 2; // the length at which the maks goes either way e.g. 3x3 -> 1 -> 1 left 1 right 1 top 1 bottom
+    for(std::size_t r = 0; r < processed.get_nrows(); r++){ // r -> the actual rows of the matrix being processed
+        for(std::size_t c = 0; c < processed.get_ncols(); c++){ // c -> the actual columns of the matrix being processed
+                byte sum = 0; //sum that is to be put in each byte (bytes from the averaging mask)
+                for(std::size_t r_m = r; r_m < r + mask.get_nrows(); r_m++){ // r_m -> current row of the mask being iterated over (goes from 0 to length)
+                    /// example we start on 3x3 mask so on 1st pixel r_m is 0 and we go to double the range because we then subtract
+                    for(std::size_t c_m = c; c_m < c + mask.get_ncols(); c_m++){ // c_m current column of the mask being iterated over (from 0 to length)
+                        std::size_t pixel_value; //value of the pixel that is to be assigned
+                        if(r_m < mask_range || r_m + 1 > processed.get_nrows() + mask_range || c_m < mask_range || c_m + 1> processed.get_ncols() + mask_range) {
+                            // 1st condition is [-range + iter >= 0] transformed and negated (left overflow)
+                            // 2nd condition is [iter - range < length] negated and transformed (right overflow)
+                            // 3rd condition is 1st condition but on columns (top overflow)
+                            // 4th condition is 2nd condition but on columns (bottom overflow)
                             pixel_value = 0;
                         }else {
-                            pixel_value = im_in[r + r_m - mask_range][c + c_m - mask_range];
+                            pixel_value = im_in[r_m - mask_range][c_m - mask_range];
                         }
 
-                        sum += (byte) ((double) pixel_value * mask[mr++][mc++]);
+                        sum += (byte) ((double) pixel_value * mask[r_m - r][c_m - c]);
                     }
                 }
                 processed[r][c] = sum;

@@ -76,7 +76,7 @@ TEST(Matrix_2D, byte_single_operator){
 //fixme nested operators dont work on vectors
 
 // they work on array 2d however
-TEST(MATRIX_2D, byte_nested_operators){
+TEST(Matrix_2D, byte_nested_operators){
     Matrix<byte> m1 = Matrix(2, 2, (byte) 0);
     m1[1][1] = 2;
     EXPECT_EQ(m1[1][1], 2);
