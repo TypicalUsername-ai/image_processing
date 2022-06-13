@@ -88,7 +88,7 @@ TEST(Image_test, nested_operators_assignment){
     #endif
     Image im(2, 2, nullptr , BITMAPFILEHEADER(), m1);
     Image im2(im);
-    (im2[1])[1] = (byte) 3;
+    im2[1][1] = (byte) 3;
     //ASSERT_NE( (long unsigned int) im2.get_matrix(), (long unsigned int) im.get_matrix());
     EXPECT_EQ(im2[0][0], (byte) 1);
     EXPECT_EQ(im2[0][1], (byte) 2);

@@ -41,6 +41,16 @@ rule CXX_EXECUTABLE_LINKER__image_processor__main_Debug
 
 
 #############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__image_processor__test_Debug
+  depfile = $DEP_FILE
+  deps = gcc
+  command = "D:\CLion 2021.3.3\bin\mingw\bin\gcc.exe" $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
 # Rule for compiling CXX files.
 
 rule CXX_COMPILER__image_processor__test_Debug

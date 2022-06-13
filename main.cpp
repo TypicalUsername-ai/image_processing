@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#include "include/bitmap.hpp"
+#include "include/bitmap.h"
 #include "include/improc.hpp"
 
 int main(void) {

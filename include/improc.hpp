@@ -1,7 +1,7 @@
 #ifndef IMAGE_PROCESSOR_IMPROC_HPP
 #define IMAGE_PROCESSOR_IMPROC_HPP
 
-#include "bitmap.hpp"
+#include "bitmap.h"
 
 #include <vector>
 #include <cstring>
@@ -12,7 +12,7 @@
 
 #define ARRAY_2D 1
 #define VECTOR_OF_VECTORS 2
-#define MATRIX_DATA_TYPE VECTOR_OF_VECTORS
+#define MATRIX_DATA_TYPE ARRAY_2D
 
 
 template<typename T>
@@ -171,9 +171,9 @@ Image filter(const Image& im_in, const Mask& mask);
  * @param filepath File to load.
  * @return The loaded image.
  */
-extern byte** load_bitmap_r(const char* filepath, BITMAPINFO **BitmapInfo);
+extern byte** load_bitmap(const char* filepath, BITMAPINFO **BitmapInfo);
 
-extern Image load_bitmap(const std::string& filepath);
+extern Image load_bitmap_r(const std::string& filepath);
 
 /**
  * Save a BMP file to disk.
@@ -182,8 +182,8 @@ extern Image load_bitmap(const std::string& filepath);
  * @param image Image to save.
  * @return EXIT_SUCCESS on success or EXIT_FAILURE on failure.
  */
-extern int save_bitmap_r(const char* filepath, byte** image, BITMAPINFO* BitmapInfo);
+extern int save_bitmap(const char* filepath, byte** image, BITMAPINFO* BitmapInfo);
 
-extern int save_bitmap(const std::string& filename, const Image& image);
+extern int save_bitmap_r(const std::string& filename, const Image& image);
 
 #endif //IMAGE_PROCESSOR_IMPROC_HPP

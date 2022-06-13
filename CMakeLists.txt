@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.13)
 set(PROJECT_ID image_processor)
 
-project(${PROJECT_ID} CXX)
+project(${PROJECT_ID})
 
-set(CMAKE_C_STANDARD 11)
+#set(CMAKE_C_STANDARD 11)
 # Ustaw standard języka C++.
 set(CMAKE_CXX_STANDARD 17) ## MANUAL
 
@@ -18,10 +18,11 @@ if (WIN32)
 endif (WIN32)
 
 set(EXEC_MAIN ${PROJECT_ID}__main)
+set(SOURCE_FILES src/improc.cpp src/bitmap.c)
 
-add_executable(${EXEC_MAIN} src/bitmap.cpp src/improc.cpp main.c)
+add_executable(${EXEC_MAIN} ${SOURCE_FILES} main.cpp)
 
-set(SOURCE_FILES src/improc.cpp src/bitmap.cpp)
+
 set(SOURCE_FILES_TESTS_AUX test/own/test_matrix.cpp test/own/test_Image.cpp)
 set(SOURCES_FILES_TESTS_MAIN test/main_gtest.cpp test/test_io.cpp test/test_aux.cpp test/test_improc.cpp)
 

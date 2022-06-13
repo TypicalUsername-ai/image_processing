@@ -5,7 +5,7 @@
  * (based on the code by Michael Sweet).
  */
 
-#include "../include/bitmap.hpp"
+#include "../include/bitmap.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>

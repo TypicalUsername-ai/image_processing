@@ -62,7 +62,12 @@ TEST(Matrix_2D, copy_constructor){
 
 TEST(Matrix_2D, byte_single_operator){
     Matrix<byte> m1 = Matrix(2, 2, (byte) 0);
+#if MATRIX_DATA_TYPE == ARRAY_2D
+    m1[0][0] = 1;
+    m1[0][1] = 1;
+#else
     m1[0] = {1,1};
+#endif
 
     EXPECT_EQ(m1[0][0], 1);
     EXPECT_EQ(m1[0][1], 1);

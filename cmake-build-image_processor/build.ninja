@@ -55,13 +55,6 @@ build list_install_components: phony
 
 build cmake_object_order_depends_target_image_processor__main: phony || CMakeFiles/image_processor__main.dir
 
-build CMakeFiles/image_processor__main.dir/src/bitmap.cpp.obj: CXX_COMPILER__image_processor__main_Debug D$:/Computer_Science_AGH/AGH$ 2nd$ semester/progII/image_processor/src/bitmap.cpp || cmake_object_order_depends_target_image_processor__main
-  DEP_FILE = CMakeFiles\image_processor__main.dir\src\bitmap.cpp.obj.d
-  FLAGS = -g -Wall -Wextra -Werror -Wpedantic -pedantic-errors -Wconversion -Wno-multichar -std=gnu++17
-  INCLUDES = -I"D:/Computer_Science_AGH/AGH 2nd semester/progII/image_processor/include"
-  OBJECT_DIR = CMakeFiles\image_processor__main.dir
-  OBJECT_FILE_DIR = CMakeFiles\image_processor__main.dir\src
-
 build CMakeFiles/image_processor__main.dir/src/improc.cpp.obj: CXX_COMPILER__image_processor__main_Debug D$:/Computer_Science_AGH/AGH$ 2nd$ semester/progII/image_processor/src/improc.cpp || cmake_object_order_depends_target_image_processor__main
   DEP_FILE = CMakeFiles\image_processor__main.dir\src\improc.cpp.obj.d
   FLAGS = -g -Wall -Wextra -Werror -Wpedantic -pedantic-errors -Wconversion -Wno-multichar -std=gnu++17
@@ -69,9 +62,16 @@ build CMakeFiles/image_processor__main.dir/src/improc.cpp.obj: CXX_COMPILER__ima
   OBJECT_DIR = CMakeFiles\image_processor__main.dir
   OBJECT_FILE_DIR = CMakeFiles\image_processor__main.dir\src
 
-build CMakeFiles/image_processor__main.dir/main.c.obj: C_COMPILER__image_processor__main_Debug D$:/Computer_Science_AGH/AGH$ 2nd$ semester/progII/image_processor/main.c || cmake_object_order_depends_target_image_processor__main
-  DEP_FILE = CMakeFiles\image_processor__main.dir\main.c.obj.d
-  FLAGS = -g -Wall -Wextra -Werror -Wpedantic -pedantic-errors -Wconversion -Wno-multichar -std=gnu11
+build CMakeFiles/image_processor__main.dir/src/bitmap.c.obj: C_COMPILER__image_processor__main_Debug D$:/Computer_Science_AGH/AGH$ 2nd$ semester/progII/image_processor/src/bitmap.c || cmake_object_order_depends_target_image_processor__main
+  DEP_FILE = CMakeFiles\image_processor__main.dir\src\bitmap.c.obj.d
+  FLAGS = -g -Wall -Wextra -Werror -Wpedantic -pedantic-errors -Wconversion -Wno-multichar
+  INCLUDES = -I"D:/Computer_Science_AGH/AGH 2nd semester/progII/image_processor/include"
+  OBJECT_DIR = CMakeFiles\image_processor__main.dir
+  OBJECT_FILE_DIR = CMakeFiles\image_processor__main.dir\src
+
+build CMakeFiles/image_processor__main.dir/main.cpp.obj: CXX_COMPILER__image_processor__main_Debug D$:/Computer_Science_AGH/AGH$ 2nd$ semester/progII/image_processor/main.cpp || cmake_object_order_depends_target_image_processor__main
+  DEP_FILE = CMakeFiles\image_processor__main.dir\main.cpp.obj.d
+  FLAGS = -g -Wall -Wextra -Werror -Wpedantic -pedantic-errors -Wconversion -Wno-multichar -std=gnu++17
   INCLUDES = -I"D:/Computer_Science_AGH/AGH 2nd semester/progII/image_processor/include"
   OBJECT_DIR = CMakeFiles\image_processor__main.dir
   OBJECT_FILE_DIR = CMakeFiles\image_processor__main.dir
@@ -84,7 +84,7 @@ build CMakeFiles/image_processor__main.dir/main.c.obj: C_COMPILER__image_process
 #############################################
 # Link the executable image_processor__main.exe
 
-build image_processor__main.exe: CXX_EXECUTABLE_LINKER__image_processor__main_Debug CMakeFiles/image_processor__main.dir/src/bitmap.cpp.obj CMakeFiles/image_processor__main.dir/src/improc.cpp.obj CMakeFiles/image_processor__main.dir/main.c.obj
+build image_processor__main.exe: CXX_EXECUTABLE_LINKER__image_processor__main_Debug CMakeFiles/image_processor__main.dir/src/improc.cpp.obj CMakeFiles/image_processor__main.dir/src/bitmap.c.obj CMakeFiles/image_processor__main.dir/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\image_processor__main.dir
@@ -110,9 +110,9 @@ build CMakeFiles/image_processor__test.dir/src/improc.cpp.obj: CXX_COMPILER__ima
   OBJECT_DIR = CMakeFiles\image_processor__test.dir
   OBJECT_FILE_DIR = CMakeFiles\image_processor__test.dir\src
 
-build CMakeFiles/image_processor__test.dir/src/bitmap.cpp.obj: CXX_COMPILER__image_processor__test_Debug D$:/Computer_Science_AGH/AGH$ 2nd$ semester/progII/image_processor/src/bitmap.cpp || cmake_object_order_depends_target_image_processor__test
-  DEP_FILE = CMakeFiles\image_processor__test.dir\src\bitmap.cpp.obj.d
-  FLAGS = -g -Wall -Wextra -Werror -Wpedantic -pedantic-errors -Wconversion -Wno-multichar -std=gnu++17
+build CMakeFiles/image_processor__test.dir/src/bitmap.c.obj: C_COMPILER__image_processor__test_Debug D$:/Computer_Science_AGH/AGH$ 2nd$ semester/progII/image_processor/src/bitmap.c || cmake_object_order_depends_target_image_processor__test
+  DEP_FILE = CMakeFiles\image_processor__test.dir\src\bitmap.c.obj.d
+  FLAGS = -g -Wall -Wextra -Werror -Wpedantic -pedantic-errors -Wconversion -Wno-multichar
   INCLUDES = -I"D:/Computer_Science_AGH/AGH 2nd semester/progII/image_processor/include" -I"D:/Computer_Science_AGH/AGH 2nd semester/progII/image_processor/../googletest-master/googlemock/include" -I"D:/Computer_Science_AGH/AGH 2nd semester/progII/image_processor/../googletest-master/googletest/include" -isystem "D:/Computer_Science_AGH/AGH 2nd semester/progII/googletest-master/googlemock/include" -isystem "D:/Computer_Science_AGH/AGH 2nd semester/progII/googletest-master/googlemock" -isystem "D:/Computer_Science_AGH/AGH 2nd semester/progII/googletest-master/googletest/include" -isystem "D:/Computer_Science_AGH/AGH 2nd semester/progII/googletest-master/googletest"
   OBJECT_DIR = CMakeFiles\image_processor__test.dir
   OBJECT_FILE_DIR = CMakeFiles\image_processor__test.dir\src
@@ -167,7 +167,7 @@ build CMakeFiles/image_processor__test.dir/test/own/test_Image.cpp.obj: CXX_COMP
 #############################################
 # Link the executable image_processor__test.exe
 
-build image_processor__test.exe: CXX_EXECUTABLE_LINKER__image_processor__test_Debug CMakeFiles/image_processor__test.dir/src/improc.cpp.obj CMakeFiles/image_processor__test.dir/src/bitmap.cpp.obj CMakeFiles/image_processor__test.dir/test/main_gtest.cpp.obj CMakeFiles/image_processor__test.dir/test/test_io.cpp.obj CMakeFiles/image_processor__test.dir/test/test_aux.cpp.obj CMakeFiles/image_processor__test.dir/test/test_improc.cpp.obj CMakeFiles/image_processor__test.dir/test/own/test_matrix.cpp.obj CMakeFiles/image_processor__test.dir/test/own/test_Image.cpp.obj | lib/libgmock.a lib/libgtest.a || lib/libgmock.a lib/libgtest.a
+build image_processor__test.exe: CXX_EXECUTABLE_LINKER__image_processor__test_Debug CMakeFiles/image_processor__test.dir/src/improc.cpp.obj CMakeFiles/image_processor__test.dir/src/bitmap.c.obj CMakeFiles/image_processor__test.dir/test/main_gtest.cpp.obj CMakeFiles/image_processor__test.dir/test/test_io.cpp.obj CMakeFiles/image_processor__test.dir/test/test_aux.cpp.obj CMakeFiles/image_processor__test.dir/test/test_improc.cpp.obj CMakeFiles/image_processor__test.dir/test/own/test_matrix.cpp.obj CMakeFiles/image_processor__test.dir/test/own/test_Image.cpp.obj | lib/libgmock.a lib/libgtest.a || lib/libgmock.a lib/libgtest.a
   FLAGS = -g
   LINK_LIBRARIES = lib/libgmock.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\image_processor__test.dir
