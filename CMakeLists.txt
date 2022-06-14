@@ -18,13 +18,13 @@ if (WIN32)
 endif (WIN32)
 
 set(EXEC_MAIN ${PROJECT_ID}__main)
-set(SOURCE_FILES src/improc.cpp src/bitmap.c)
+set(SOURCE_FILES src/improc.cpp src/imqueue.cpp src/bitmap.c)
 
 add_executable(${EXEC_MAIN} ${SOURCE_FILES} main.cpp)
 
 
 set(SOURCE_FILES_TESTS_AUX test/own/test_matrix.cpp test/own/test_Image.cpp)
-set(SOURCES_FILES_TESTS_MAIN test/main_gtest.cpp test/test_io.cpp test/test_aux.cpp test/test_improc.cpp)
+set(SOURCES_FILES_TESTS_MAIN test/main_gtest.cpp test/test_io.cpp test/test_aux.cpp test/test_improc.cpp test/test_imqueue.cpp)
 
 ##MANUAL -> pasted cmake code for inclusions of GTEST library
 if(EXISTS ${PROJECT_SOURCE_DIR}/test)

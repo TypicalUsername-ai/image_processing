@@ -53,11 +53,7 @@ TEST(ImProcTest, Filter_3x3_n3) {
 
     for (std::size_t i = 0; i < filtered_image.get_nrows(); i++) {
         for (std::size_t j = 0; j < filtered_image.get_ncols(); j++) {
-            if (i == 1 && j == 1) {
-                EXPECT_EQ(filtered_image[i][j], 1U);
-            } else {
-                EXPECT_EQ(filtered_image[i][j], 0U);
-            }
+            EXPECT_EQ(filtered_image[i][j], 1U);
         }
     }
 }
@@ -72,17 +68,14 @@ TEST(ImProcTest, Filter_3x5_n3) {
 
     for (std::size_t i = 0; i < filtered_image.get_nrows(); i++) {
         for (std::size_t j = 0; j < filtered_image.get_ncols(); j++) {
-            if (i == 1 && j >= 1 && j <= 3) {
-                if (j == 1) {
-                    EXPECT_EQ(filtered_image[i][j], 3U);
-                } else if (j == 2) {
-                    EXPECT_EQ(filtered_image[i][j], 4U);
-                } else {
-                    EXPECT_EQ(filtered_image[i][j], 2U);
-                }
-            } else {
-                EXPECT_EQ(filtered_image[i][j], 0U);
-            }
+            if (j == 0 || j == 3)
+                EXPECT_EQ(filtered_image[i][j], 2U);
+            else if (j == 1)
+                EXPECT_EQ(filtered_image[i][j], 3U);
+            else if (j == 2)
+                EXPECT_EQ(filtered_image[i][j], 4U);
+            else
+                EXPECT_EQ(filtered_image[i][j], 1U);
         }
     }
 }
