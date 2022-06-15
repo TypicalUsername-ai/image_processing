@@ -18,7 +18,7 @@ public:
 };
 
 //this shit actually writes to the passed pointers FIXME the wrapper function won't work on the vector implementation so TODO refactor
-byte** load_bitmap(const char* filepath, BITMAPINFO **BitmapInfo) {
+byte** load_bitmap_r(const char* filepath, BITMAPINFO **BitmapInfo) {
     BITMAPFILEHEADER header;
     byte* bitmapBytes = LoadDIBitmap(filepath, BitmapInfo, &header);
 
@@ -65,7 +65,7 @@ byte** load_bitmap(const char* filepath, BITMAPINFO **BitmapInfo) {
     return image_array;
 }
 
-Image load_bitmap_r(const std::string& filepath){
+Image load_bitmap(const std::string& filepath){
     BITMAPINFO* inf = new BITMAPINFO();
     BITMAPFILEHEADER header;
 
@@ -116,7 +116,7 @@ Image load_bitmap_r(const std::string& filepath){
     return return_image;
 }
 
-int save_bitmap(const char* filepath, byte** image, BITMAPINFO* BitmapInfo) {
+extern int save_bitmap_r(const char* filepath, byte** image, BITMAPINFO* BitmapInfo) {
 
     const size_t h = (size_t) BitmapInfo->bmiHeader.biWidth;
     const size_t w = (size_t) BitmapInfo->bmiHeader.biHeight;
@@ -147,7 +147,7 @@ int save_bitmap(const char* filepath, byte** image, BITMAPINFO* BitmapInfo) {
     return status;
 }
 
-extern int save_bitmap_r(const std::string& filename, const Image& image){
+extern int save_bitmap(const std::string& filename, const Image& image){
     const size_t h = (size_t) (image.get_bitmapinfo())->bmiHeader.biWidth;
     const size_t w = (size_t) (image.get_bitmapinfo())->bmiHeader.biHeight;
     const size_t bits_per_pixel = (image.get_bitmapinfo())->bmiHeader.biBitCount;

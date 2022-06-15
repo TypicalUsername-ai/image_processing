@@ -10,7 +10,7 @@
 TEST(ImIOTest, ReadImage) {
     std::string img_root = "../imgs/";
     std::string input_filename = img_root + "1x1_g127_win.bmp";
-    Image input_image = load_bitmap_r(input_filename);
+    Image input_image = load_bitmap(input_filename);
 
     ASSERT_NE(input_image.get_bitmapinfo(), nullptr);
 
@@ -50,11 +50,11 @@ TEST(ImIOTest, WriteImage) {
     std::string img_root = "../imgs/";
 
     std::string reference_filepath = img_root + "1x1_g127_win.bmp";
-    Image reference_image = load_bitmap_r(reference_filepath);
+    Image reference_image = load_bitmap(reference_filepath);
 
     std::string test_filpath = img_root + "test_out.bmp";
-    save_bitmap_r(test_filpath, reference_image);
-    Image input_image = load_bitmap_r(test_filpath);
+    save_bitmap(test_filpath, reference_image);
+    Image input_image = load_bitmap(test_filpath);
     std::remove(test_filpath.c_str());
 
     ASSERT_NE(input_image.get_bitmapinfo(), nullptr);
