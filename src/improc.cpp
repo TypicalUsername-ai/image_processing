@@ -103,7 +103,7 @@ Image load_bitmap(const std::string& filepath){
     for (size_t i = 0; i < h; ++i) {
         /* Copy values of pixels in an image row. */
         for (size_t j = 0; j < w; ++j) {
-            return_image[h - i - 1][j] = (byte) *reader; //FIXME values are right but it doesnt copy???
+            return_image[h - i - 1][j] = (byte) *reader;
             ++reader;
         }
 
@@ -173,6 +173,9 @@ extern int save_bitmap(const std::string& filename, const Image& image){
 
     int status = SaveDIBitmap(filename.c_str(), image.get_bitmapinfo(), bitmapBytes);
     free(bitmapBytes);
+    if (status == EXIT_FAILURE){
+        throw FileIOError();
+    }
 
     return status;
 }

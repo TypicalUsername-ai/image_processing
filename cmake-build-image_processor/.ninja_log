@@ -63,3 +63,15 @@
 25837	29957	6770205905769069	lib/libgtest.a	7b763998cad333e5
 29957	30467	6770205910879398	lib/libgmock.a	d7cf3a403ccd416d
 30467	36281	6770205968903505	image_processor__test.exe	aafae04cff800d3
+9	6251	6774545316209663	CMakeFiles/image_processor__test.dir/src/improc.cpp.obj	cde0f0d4b4b7de5c
+6252	12806	6774545381623739	image_processor__test.exe	aafae04cff800d3
+33	19526	6774545869224422	CMakeFiles/image_processor__test.dir/src/improc.cpp.obj	cde0f0d4b4b7de5c
+8	19564	6774545870044486	CMakeFiles/image_processor__test.dir/src/imqueue.cpp.obj	9c250424b3198700
+136	20403	6774545878085130	CMakeFiles/image_processor__test.dir/test/own/test_matrix.cpp.obj	39843c58319e73a4
+122	20479	6774545878935148	CMakeFiles/image_processor__test.dir/test/own/test_Image.cpp.obj	b5724c4e35a420ff
+99	20619	6774545880595277	CMakeFiles/image_processor__test.dir/test/test_io.cpp.obj	775b6bd44e0403a7
+38	21050	6774545884725604	CMakeFiles/image_processor__test.dir/test/test_improc.cpp.obj	20fcc235f9f771a5
+144	21173	6774545886185696	CMakeFiles/image_processor__test.dir/test/test_imqueue.cpp.obj	3f6066991d2a4b9c
+91	21434	6774545888825903	CMakeFiles/image_processor__test.dir/test/test_aux.cpp.obj	68e4f31ebf464b8b
+21434	28017	6774545954188018	image_processor__test.exe	aafae04cff800d3
+0	44	0	clean	f6b1994cc81dfbb3

@@ -12,7 +12,7 @@
 
 #define ARRAY_2D 1
 #define VECTOR_OF_VECTORS 2
-#define MATRIX_DATA_TYPE VECTOR_OF_VECTORS
+#define MATRIX_DATA_TYPE ARRAY_2D
 
 
 template<typename T>
